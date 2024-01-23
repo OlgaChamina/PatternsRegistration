@@ -23,6 +23,7 @@ public class DataGenerator {
 
     private DataGenerator() {
     }
+
     private static RegistrationDto sendRequest(RegistrationDto user) {
         given() // "дано"
                 .spec(requestSpec) // указываем, какую спецификацию используем
@@ -33,6 +34,7 @@ public class DataGenerator {
                 .statusCode(200); // код 200 OK
         return user;
     }
+
     public static String getRandomLogin() {
         // TODO: добавить логику для объявления переменной login и задания её значения, для генерации
         //  случайного логина используйте faker
@@ -50,9 +52,8 @@ public class DataGenerator {
         }
 
         public static RegistrationDto getUser(String status) {
-
             // TODO: создать пользователя user используя методы getRandomLogin(), getRandomPassword() и параметр status
-            return new RegistrationDto(getRandomLogin(),getRandomPassword(), status);
+            return new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
         }
 
         public static RegistrationDto getRegisteredUser(String status) {
